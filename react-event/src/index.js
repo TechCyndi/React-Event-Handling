@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom'
 import './index.css';
-import ProfileApp from './src/components/ProfileApp';
+import ProfileApp from './components/ProfileApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

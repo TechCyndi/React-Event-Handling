@@ -1,6 +1,6 @@
 import React from 'react'
-import { users } from '../Users'
-import '../style/profile.css'
+import  {users} from "../User.js"
+import '../Style/profile.css'
 
 const UserProfile = () => {
     const userDetails = users.map((user, index) => {

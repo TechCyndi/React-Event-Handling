@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { users } from '../Users';
-import UserProfile from './UserProfile';
+   import React, { useState } from 'react'
+import { users } from '../User.js';
+import UserProfile from './UserProfile.js';
 
 
 const Searchbar = () => {
