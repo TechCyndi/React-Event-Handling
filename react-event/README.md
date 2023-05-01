@@ -1,5 +1,4 @@
-I have just made some changes to this application.
-
+I have just made some changes to this application. 
 
 # Getting Started with Create React App
 
