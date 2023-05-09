@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client';
 import './index.css';
-import ProfileApp from './components/ProfileApp';
+import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ProfileApp/>
-  
+    <App />
   </React.StrictMode>
 );
-
-

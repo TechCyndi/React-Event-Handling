@@ -1,47 +1,34 @@
-import React, { useState } from 'react';
-import { users } from '../User.js';
+import React from 'react'
+import '../styles/searchbar.css'
 
+const SearchBar = ({userDetails, setSearchQuery}) => {
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+    }
 
-const Searchbar = () => {
-    const [search, setSearch] =useState("");
-    const [filteredusers, setFilteredUsers] = useState([users]);
+     const handleSearch = (event) => {
+        if (!event.target.value) {
+            setSearchQuery(userDetails)
+        }
 
-    const handleSearchChange = (event) =>{
-        setSearch(event.target.value);
-    
-
-    const filteredUsers=users.filter((users) =>
-    users.firstName.toLowerCase().includes(event.target.value.toLowerCase()));
-    setFilteredUsers(filteredUsers)
-    };
+        const filteredData = (userDetails.filter(function(profile) {
+            return (
+                profile.title.toLowerCase().includes(event.target.value.toLowerCase()) || 
+                profile.firstName.toLowerCase().includes(event.target.value.toLowerCase()) || 
+                profile.lastName.toLowerCase().includes(event.target.value.toLowerCase())
+            )
+        }))
+        setSearchQuery(filteredData);
+    }
 
   return (
-    <div className='inputbar'>
-        <div className='search-container'>
-            <input type="text" placeholder='Search by name' value={search} onChange={handleSearchChange}/>
-        </div>
-        <table className='users-table'>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    </tr>
-            </thead>
-            <tbody>
-                {filteredusers.map((users) => (
-                    <tr key={users.id}>
-                        <td>
-                            
-                        </td>
-                        <td>{users.name}</td>
-                    </tr>
-                )
-                )}
-            </tbody>
-        </table>
+    <div className="search-container">
+        <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Search by name..." onChange={handleSearch}/>
+        </form>
     </div>
-  );
+  )
 }
 
-export default Searchbar
+export default SearchBar;
